@@ -1,0 +1,158 @@
+/* 全局 */
+.textcenter {
+    text-align: center;
+}
+
+.hidden {
+    display: none
+}
+
+.show-dialog {
+    display: -webkit-box;
+    display: box;
+}
+
+.shownn {
+    display: block
+}
+
+.adimg {
+    font-size: 0;
+}
+
+.finish-img {
+    font-size: 0;
+}
+
+.finish-img img {
+    width: 100%;
+}
+
+.adimg img {
+    width: 100%;
+}
+
+/* banner1 */
+.banner1 {
+    height: 100px;
+    overflow: hidden;
+}
+
+.banner1img img {
+    width: 100%;
+}
+
+/* banner2 */
+.banner2 {
+    height: 50px;
+    overflow: hidden;
+}
+
+.banner2img img {
+    width: 100%;
+}
+
+/* 大转盘 */
+.dazhuanpan {
+    height: 375px;
+    padding-top: 24px;
+}
+
+/* 提示次数 */
+.tipcount {
+    width: 200px;
+    margin: 10px auto;
+    border-radius: 12px;
+}
+
+/* 奖品列表 */
+.award {
+    height: 140px;
+    overflow: hidden;
+}
+
+.ui-tab-nav {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.ui-tab-nav li{color:#eee;}
+
+.ui-tab-nav li.current {
+    background-color: #fff;
+}
+
+/* 滚动列表 */
+
+.list li {
+    height: 30px;
+    padding: 0 5px;
+    line-height: 30px;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* 活动规则 */
+.rule {
+    min-height: 240px;
+}
+
+.style-title {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.share-btn {
+    position: absolute;
+    top: 140px;
+    right: 3px;
+    display: none;
+}
+
+.share-dialog .ui-dialog-cnt {
+    height: 100%;
+    width: 100%;
+}
+
+.share-dialog .shareimg {
+    position: absolute;
+    top: 96px;
+    right: 30px;
+}
+
+.ui-dialog-cnt h3, .ui-dialog-cnt  h4, .ui-dialog-cnt p{
+	font-size:19px;
+}
+
+/* 主题颜色 */
+/* 默认主题 */
+.theme-default {
+    color: #fff;
+    background-color: #62BEE3;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-top:100px;
+}
+
+.theme-default .tipcount {
+    background-color: #0093D8;
+}
+
+.theme-default .ui-form {
+    background-color: rgba(33, 66, 78, 0.83);
+}
+
+.theme-default .ui-dialog-cnt {
+    background-color: rgba(16, 37, 45, 0.84);
+}
+
+.theme-default .share-btn .ui-btn-s {
+    background-color: #0baae4;
+}
+
+.theme-default .ui-form-item-pure input {
+    caret-color: #888 !important;
+    color: #fff;
+}

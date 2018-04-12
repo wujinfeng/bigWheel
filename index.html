@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>抽奖</title>
+    <link rel="stylesheet" href="./frozenui/css/basic.css">
+    <link rel="stylesheet" href="./frozenui/css/frozen.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./gbcss3/css/GB-css3-wheel.css">
+    <link rel="stylesheet" href="http://icono-49d6.kxcdn.com/icono.min.css">
+</head>
+<body ontouchstart>
+<!--banner1-->
+<div class="ui-row-flex ui-row-flex-ver banner1">
+    <div class="ui-col">
+        <div class="banner1img"></div>
+    </div>
+</div>
+<!--banner2-->
+<div class="ui-row-flex ui-row-flex-ver banner2">
+    <div class="ui-col">
+        <div class="banner2img"></div>
+    </div>
+</div>
+<!--主题样式设置-->
+<div class="theme-default">
+    <!-- 大转盘 -->
+    <div class="ui-row-flex ui-row-flex-ver dazhuanpan">
+        <div class="ui-col">
+            <section class="gb-wheel-container" id="gbWheel">
+                <div class="gb-wheel-content gb-wheel-run">
+                    <ul class="gb-wheel-line">
+                        <li class="gb-wheel-litem" style="transform: rotate(0.08333333333333333turn)"></li>
+                        <li class="gb-wheel-litem" style="transform: rotate(0.25turn)"></li>
+                        <li class="gb-wheel-litem" style="transform: rotate(0.41666666666666663turn)"></li>
+                        <li class="gb-wheel-litem" style="transform: rotate(0.5833333333333334turn)"></li>
+                        <li class="gb-wheel-litem" style="transform: rotate(0.75turn)"></li>
+                        <li class="gb-wheel-litem" style="transform: rotate(0.9166666666666666turn)"></li>
+                    </ul>
+                    <div class="gb-wheel-list">
+                        <div class="gb-wheel-item">
+                            <p class="gb-wheel-icontent" style="transform: rotate(0turn)">0</p>
+                        </div>
+                        <div class="gb-wheel-item">
+                            <p class="gb-wheel-icontent" style="transform: rotate(0.16666666666666666turn)">1</p>
+                        </div>
+                        <div class="gb-wheel-item">
+                            <p class="gb-wheel-icontent" style="transform: rotate(0.3333333333333333turn)">2</p>
+                        </div>
+                        <div class="gb-wheel-item">
+                            <p class="gb-wheel-icontent" style="transform: rotate(0.5turn)">3</p>
+                        </div>
+                        <div class="gb-wheel-item">
+                            <p class="gb-wheel-icontent" style="transform: rotate(0.6666666666666666turn)">4</p>
+                        </div>
+                        <div class="gb-wheel-item">
+                            <p class="gb-wheel-icontent" style="transform: rotate(0.8333333333333333turn)">5</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:void(0);" class="gb-wheel-btn" id="gbLottery">抽奖</a>
+            </section>
+        </div>
+    </div>
+    <!-- 提示次数 -->
+    <div class="tipcount textcenter">
+        您还有 <span id='remainCount'>0</span>次机会!
+    </div>
+
+    <!-- 奖品列表 -->
+    <div class="style-title textcenter">奖品列表</div>
+    <div class="ui-row-flex ui-whitespace ui-row-flex-ver award textcenter">
+        <div class="ui-tab" id="tab1">
+            <ul class="ui-tab-nav ui-border-b">
+                <li class="current">我的奖品</li>
+                <li>最新中奖</li>
+            </ul>
+            <ul class="ui-tab-content" style="width:300%">
+                <li>
+                    <ul class='mylist'>
+                        <li>暂无</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class='list'>
+                        <li>18310016618-中华烟一盒</li>
+                        <li>13015266633-啤酒一瓶</li>
+                        <li>15025256666-矿泉水一瓶</li>
+                        <li>17045662233-面膜一套</li>
+                        <li>18233661525-懒人支架</li>
+                        <li>15322100011-苹果手机贴膜</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 活动规则 -->
+    <div class="style-title textcenter">活动规则</div>
+    <div class="ui-row-flex ui-whitespace ui-row-flex-ver rule">
+        <div class="ui-col">
+            <div>
+                活动时间：2018-03-12 - 2018-03-15
+                <p>活动规则：</p>
+                <p>暂无kddddd</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 广告弹出框 -->
+    <div class="ui-dialog ad-dialog">
+        <div class="ui-dialog-cnt">
+            <header class="ui-border-b">
+                <i class="ui-dialog-close" data-role="button"></i>
+            </header>
+            <div class="">
+                <div class="adimg"><img
+                        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520942405785&di=b4a243df3dda2a75572b7959641a975c&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20150507%2Ftooopen_sy_122395947985.jpg"
+                        alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 中奖弹出框 -->
+    <div class="ui-dialog  win" style="position: absolute;">
+        <div class="ui-dialog-cnt">
+            <header class="ui-dialog-hd ui-border-b">
+                <h3 class="">恭喜你中奖啦！</h3>
+                <i class="ui-dialog-close" data-role="button"></i>
+            </header>
+            <div class="ui-dialog-bd">
+                <h4 class="">奖品：AAA</h4>
+                <p class="textcenter">中奖文案：邮寄地址</p>
+                <div>
+                    <div class="ui-form ui-border-t">
+                        <form>
+                            <div class="ui-form-item ui-form-item-pure ui-border-b">
+                                <input type="text" id="name" placeholder="姓名">
+                                <a class="ui-icon-close hidden"></a>
+                            </div>
+                            <div class="ui-form-item ui-form-item-pure ui-border-b">
+                                <input type="number" id="mobile" placeholder="手机号">
+                                <a class="ui-icon-close hidden"></a>
+                            </div>
+                            <div class="ui-form-item ui-form-item-pure ui-border-b">
+                                <input type="text" id="address" placeholder="地址">
+                                <a class="ui-icon-close hidden "></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-dialog-ft">
+                <button type="button" data-role="button" id="submitMyInfo">提交</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提交完成弹出框 -->
+    <div class="ui-dialog reset finish-dialog">
+        <div class="ui-dialog-cnt">
+            <header class="ui-dialog-hd ui-border-b">
+                <h3 class="ui-txt-warning">提交完成</h3>
+                <i class="ui-dialog-close" data-role="button"></i>
+            </header>
+            <div class="ui-dialog-bd">
+                <p class="ui-txt-warning textcenter">请关注二维码获取奖品状态</p>
+                <div>
+                    <div class="finish-img">
+                        <img src="http://pic.58pic.com/58pic/13/20/45/08h58PICR7Y_1024.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--分享按钮-->
+    <div class="ui-btn-wrap share-btn">
+        <button class="ui-btn-s" id="shareBtn">分享</button>
+    </div>
+    <!--分享弹出框-->
+    <div class="ui-dialog share-dialog">
+        <div class="ui-dialog-cnt">
+            <header class="ui-border-b">
+                <i class="ui-dialog-close" data-role="button"></i>
+            </header>
+            <div class="">
+                <div class="shareimg"><img src="http://www.xiqueyun.cn/static/uploads/img/share.png"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="./frozenui/lib/zepto.min.js"></script>
+<script src="./frozenui/js/frozen.js"></script>
+<script src="./js/autolist.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.21.0/moment.min.js"></script>
+<script>
+    $(function () {
+        var WEBURL = '';
+        $('#shareBtn').tap(function () {
+            $(".share-dialog").dialog('show');
+        });
+
+        var mobile = '12352636366'
+        $('.list').autolist();
+        /*奖品列表*/
+        var tab = new fz.Scroll('.ui-tab', {role: 'tab'});
+        tab.on('beforeScrollStart', function (from, to) {
+            console.log(from, to);
+        });
+        tab.on('scrollEnd', function (curPage) {
+            console.log('curPage:'+curPage);
+            /*奖品列表滚动*/
+            if (curPage===0) {
+                if (mobile) {                    
+                     $('.mylist').autolist();
+                }
+            }else{
+                  $('.list').autolist();
+            }
+        });
+
+        /*广告弹出框*/
+        function adDialog(duration) {
+            if (duration && duration != 0) {
+                $(".ad-dialog").dialog('show');
+                setTimeout(function () {
+                    $(".ui-dialog").dialog('hide');
+                }, Number(duration) * 1000);
+            }
+        }
+
+        var $remainCount = $('#remainCount');
+        var userWinCount = 0;  // 用户抽奖次数
+        var allAward = [];     // 奖品列表
+        var winAwardIndex = 0; // 中奖索引
+        // 获取整体页面数据
+        $.get('/url', function (response, status, xhr) {
+            var data = response || {};
+            var duration = data.duration || 0; //显示时间大于0则显示
+            var user_win_count = data.user_win_count || 3; // 用户抽奖次数
+            $remainCount.text(user_win_count);
+            userWinCount = user_win_count;
+            allAward = data.awardArr || [];
+            winAwardIndex = data.winAwardIndex || 0; // 中奖索引
+            adDialog(duration); // 设置广告
+            setTurn({})
+            setBanner('.banner2img', '.banner2', data) // set banner2
+            setBanner('.banner1img', '.banner1', data) // set banner1
+        });
+        // 设置banner
+        function setBanner(bannerimg, banner, data) {
+            var banner_id, banner_img, banner_type;
+            if (bannerimg === '.banner2img') {
+                banner_id = data.banner2_id || 2;
+                banner_img = data.banner2_img || "http://pic.58pic.com/58pic/13/20/45/08h58PICR7Y_1024.jpg";
+                banner_type = data.banner2_type || 2; // 点击会跳转
+            } else {
+                banner_id = data.banner1_id || 2;
+                banner_img = data.banner1_img || "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520942405785&di=b4a243df3dda2a75572b7959641a975c&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20150507%2Ftooopen_sy_122395947985.jpg";
+                banner_type = data.banner1_type || 2; // 点击会跳转
+            }
+            if (banner_id) {
+                var href = '';
+                if (banner_type === 2) {
+                    href = 'href="/ad/' + banner_id + '"';
+                }
+                $(bannerimg).html('<a ' + href + '><img src=' + banner_img + '></a>')
+            } else {
+                $(banner).hide()
+            }
+        }
+        // 中奖弹出
+        function winAward() {
+            $(".win").dialog('show');
+        }
+
+// 设置转盘图背景
+        function setTurn(activity) {
+            var turpic = activity.turpic || 'http://img3.redocn.com/tupian/20150312/haixinghezhenzhubeikeshiliangbeijing_3937174.jpg';
+            var arrpic = activity.arrpic || 'http://pic.58pic.com/58pic/15/89/60/91k58PICmQ8_1024.jpg';
+            $('#gbWheel').css('background-image','url('+WEBURL+turpic+')');
+            $('#gbLottery').css('background-image','url('+WEBURL+arrpic+')');
+           
+        }
+
+        /*提交用户填写信息*/
+        $('#submitMyInfo').click(function (event) {
+            event.stopPropagation();
+            event.preventDefault();
+            submitMyInfo();
+        });
+        function submitMyInfo() {
+            console.log('tap...')
+            var name = $('#name').val();
+            var address = $('#address').val();
+            var mobile = $('#mobile').val();
+            if (!name || !address || !mobile) {
+                $(".win").addClass('show-dialog');       // 弹出中奖
+                $.tips({content: '请填写完整信息！',stayTime: 2000,type: "error"})
+                setTimeout(function (){
+                    $(".win").removeClass('show-dialog').addClass('show');
+                 }, 2200);
+                return
+            }
+            if (name && address && mobile) {
+                $.get('/aaa', {name: name, mobile: mobile, address: address}, function (result) {
+                    if (result.code === 200) {
+                        $(".win").dialog('hide');
+                        $(".finish-dialog").dialog('show');
+                    } else {
+                        $(".win").addClass('show-dialog');       // 弹出中奖
+                        $.tips({content: '请填写完整信息！',stayTime: 2000,type: "error"})
+                        setTimeout(function (){
+                            $(".win").removeClass('show-dialog').addClass('show');
+                        }, 2200);
+                    }
+                })
+            } else {
+                $(".win").addClass('show-dialog');       // 弹出中奖
+                $.tips({
+                    content: '请填写完整信息！',
+                    stayTime: 2000,
+                    type: "error"
+                })
+            }
+            $(".win").removeClass('show-dialog');       // 弹出中奖
+        }
+
+
+        (function () {
+            // 奖品配置
+            var awards = [
+                    {'index': 0, 'name': '耳机', 'src': './gbcss3/img/1.png'},
+                    {'index': 1, 'name': 'iPhone', 'src': './gbcss3/img/2.png'},
+                    {'index': 2, 'name': '相机', 'src': './gbcss3/img/3.png'},
+                    {'index': 3, 'name': '咖啡杯', 'src': './gbcss3/img/4.png'},
+                    {'index': 4, 'name': '日历', 'src': './gbcss3/img/5.png'},
+                    {'index': 5, 'name': '键盘', 'src': './gbcss3/img/6.png'}
+                ],
+                len = awards.length,
+                turnNum = 1 / len;  // 文字旋转 turn 值
+
+            var gbWheel = document.getElementById('gbWheel'),
+                lineList = gbWheel.querySelector('ul.gb-wheel-line'),
+                itemList = gbWheel.querySelector('.gb-wheel-list'),
+                lineListHtml = [],
+                itemListHtml = [];
+
+            var transform = preTransform();
+
+            awards.forEach(function (v, i, a) {
+                // 分隔线
+                lineListHtml.push('<li class="gb-wheel-litem" style="' + transform + ': rotate(' + (i * turnNum + turnNum / 2) + 'turn)"></li>');
+
+                // 奖项
+                itemListHtml.push('<div class="gb-wheel-item">');
+                itemListHtml.push('<div class="gb-wheel-icontent" style="' + transform + ': rotate(' + (i * turnNum) + 'turn)">');
+
+                itemListHtml.push('<p class="gb-wheel-itext">');
+                itemListHtml.push(v.name);
+                itemListHtml.push('</p>');
+
+                itemListHtml.push('<p class="gb-wheel-iicon">');
+                //itemListHtml.push('<i class="'+v.name+'"></i>');
+                itemListHtml.push('<img class="rotate-img" src="' + v.src + '"></>');
+                itemListHtml.push('</p>');
+
+                itemListHtml.push('</div>');
+                itemListHtml.push('</div>');
+            });
+
+            lineList.innerHTML = lineListHtml.join('');
+            itemList.innerHTML = itemListHtml.join('');
+
+            // 旋转
+            var i = 0;
+            var isRotateing = false;
+            document.getElementById('gbLottery').onclick = function () {
+                if(isRotateing){
+                    $.tips({content: '心急吃不了热豆腐！', stayTime: 2000, type: "success"});
+                    return;
+                }
+                i++;
+                userWinCount--;   // 抽一次，次数少一次
+                if (userWinCount < 0) {
+                    $.tips({content: '已经抽取完毕', stayTime: 2000, type: "error"});
+                    return
+                }
+                $remainCount.text(userWinCount);  // 设置界面显示抽奖次数
+
+                var winNum = 1;  // 12点方向 从零开始计数 抽奖计数 顺时针
+                var deg = 2520 * i - (1 / len) * winNum * 360;
+                gbWheel.querySelector('.gb-wheel-content').style[transform] = 'rotate(' + deg + 'deg)';
+                isRotateing = true; // 正在旋转
+                setTimeout(function () {
+                    isRotateing = false; // 停止旋转
+                    if(winNum !== 0){
+                        winAward()       // 弹出中奖
+                    }
+                },7000)
+
+            };
+
+            // console.log(preTransform());
+
+            // transform兼容
+            function preTransform() {
+                var cssPrefix,
+                    vendors = {
+                        '': '',
+                        Webkit: 'webkit',
+                        Moz: '',
+                        O: 'o',
+                        ms: 'ms'
+                    },
+                    testEle = document.createElement('p'),
+                    cssSupport = {};
+
+                // 嗅探特性
+                Object.keys(vendors).some(function (vendor) {
+                    if (testEle.style[vendor + (vendor ? 'T' : 't') + 'ransform'] !== undefined) {
+                        cssPrefix = vendor ? '-' + vendor.toLowerCase() + '-' : '';
+                        return true;
+                    }
+                });
+
+                /**
+                 * [兼容CSS前缀]
+                 * @param  {[type]} name [description]
+                 * @return {[type]}      [description]
+                 */
+                function normalizeCss(name) {
+                    name = name.toLowerCase();
+                    return cssPrefix ? cssPrefix + name : name;
+                }
+
+                cssSupport = {
+                    transform: normalizeCss('Transform'),
+                }
+
+                return cssSupport.transform;
+            }
+
+        }());
+    })
+</script>
+</body>
+</html>
